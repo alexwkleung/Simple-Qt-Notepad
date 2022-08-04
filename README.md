@@ -2,4 +2,4 @@
 
 A simple notepad app created in Qt.
 
-Reference: https://doc.qt.io/qt-6/qtwidgets-tutorials-notepad-example.html
+Used this Qt tutorial as a reference and base: https://doc.qt.io/qt-6/qtwidgets-tutorials-notepad-example.html

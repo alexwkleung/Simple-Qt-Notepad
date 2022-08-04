@@ -113,6 +113,21 @@ void Notepad::on_actionSave_As_triggered() {
     file.close();
 }
 
+//push button - fonts
+void Notepad::on_actionFonts_triggered() {
+    //declare fontSelect which is a boolean
+    bool fontSelect{};
+
+    //declare QFont object font that is assigned a QFontDialog widget containing fonts to select
+    //getFont takes in the reference of fontSelect (bool) and the Notepad constructor
+    QFont font = QFontDialog::getFont(&fontSelect, this);
+
+    //if fontSelect is true (if we select a font), then the selected font will be added to the Ui widget textEdit buffer (editor)
+    if(fontSelect) {
+        ui->textEdit->setFont(font);
+    }
+}
+
 //push button - open document
 void Notepad::on_pushButton_Open_clicked() {
     QString fileName = QFileDialog::getOpenFileName(this, "Open a file");
@@ -172,8 +187,7 @@ void Notepad::on_pushButton_Save_clicked() {
 }
 
 //push button - new document
-void Notepad::on_pushButton_New_clicked()
-{
+void Notepad::on_pushButton_New_clicked() {
     this->currentFile.clear();
 
     setWindowTitle("Simple Notepad");
@@ -182,16 +196,11 @@ void Notepad::on_pushButton_New_clicked()
 }
 
 //push button - fonts
-void Notepad::on_pushButton_Fonts_clicked()
-{
-    //declare fontSelect which is a bool
+void Notepad::on_pushButton_Fonts_clicked() {
     bool fontSelect{};
 
-    //declare QFont object font that is assigned a QFontDialog widget containing fonts to select
-    //getFont takes in the reference of fontSelect (bool) and the Notepad constructor
     QFont font = QFontDialog::getFont(&fontSelect, this);
 
-    //if fontSelect is true (if we select a font), then the selected font will be added to the Ui widget textEdit buffer (editor)
     if(fontSelect) {
         ui->textEdit->setFont(font);
     }

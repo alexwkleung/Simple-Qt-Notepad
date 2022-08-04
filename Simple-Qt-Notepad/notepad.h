@@ -33,6 +33,8 @@ private slots:
 
     void on_actionSave_As_triggered();
 
+    void on_actionFonts_triggered();
+
     void on_pushButton_Open_clicked();
 
     void on_pushButton_Save_clicked();
